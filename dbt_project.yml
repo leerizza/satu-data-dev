@@ -33,7 +33,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   satu_data_dev:
-    materialized: table
+    #materialized: table
     # Applies to all files under models/example/
     example:
       materialized: table
