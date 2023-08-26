@@ -1,0 +1,21 @@
+
+version: 2
+
+models:
+    - name: employees
+      description: merupakan data master employees
+      # columns:
+      #     - name: id
+      #       description: "The primary key for this table"
+      #       tests:
+      #           - unique
+      #           - not_null
+
+    - name: departments
+      description: merupakan data master departments
+    #   columns:
+    #       - name: id
+    #         description: "The primary key for this table"
+    #         tests:
+    #             - unique
+    #             - not_null
