@@ -1,5 +1,5 @@
 {{
-    config(materialized='table')
+    config(materialized='table', description='merupakan data master employees')
 }}
 
 WITH x AS (
