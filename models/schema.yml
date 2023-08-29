@@ -40,12 +40,49 @@ models:
 
     - name: dim_transaksi
       description: merupakan data master transaksi bulan mei juni juli
-    #   columns:
-    #       - name: id
-    #         description: "The primary key for this table"
-    #         tests:
-    #             - unique
-    #             - not_null
+      columns:
+          - name: transaksi_id
+            description: "primary key untuk table dim_transaksi"
+            tests:
+                - unique
+                - not_null
+          - name: nama_barang
+            description: "kolom nama barang/produk"
+            tests:
+                - not_null
+                - accepted_values:
+                    values: ['Americano Hot','Ananastart - Personal',
+                          'Apple Pie - Medium','Apple Pie - Sliced','Aprillia Mocktail - cup',
+                          'Artisan Tea - Teman buku mug iced','Artisan Tea - Turkish Apple Mug Hot',
+                          'Artisan Tea - Golden Hour Pot','Artisan Tea - Racikan Hujan Mug Hot','Artisan Tea - Golden Hour Mug Hot','Artisan Tea - Scarlett Mug Hot',
+                          'Artisan Tea - Teman buku mug hot','Artisan Tea - Ubud Pot','Artisan Tea - Scarlett Pot','Artisan Tea - Teman buku Pot','Beef Quiche - Medium',
+                          'Beef Quiche - Personal','Beef Quiche - Sliced','Burnt Cheescake - Whole size, Medium','Burnt Cheescake - Sliced Burnt cheesecake','Cappuccino - Iced',
+                          'Chicken Mushroom - Large','Chicken Mushroom - Medium','Chocolate Royce - Personal','Chocolate Royce - Medium','Chocolate Royce - Sliced','Choux Original',
+                          'Es Kopi Susu - Cup','Fruit Pie - Large','Green Tea - Iced','Japanese','Latte - Hot','Le Minerale','Long Black iced','Lotus NY Cheesecake - Sliced NYC',
+                          'Minis-8 - Mixed','Strawberry Cheesetart - Large','Strawberry Cheesetart - Medium','Strawberry Cheesetart - Sliced','Strawberry Cheesetart - Personal',
+                          'Triple Chesee - Medium','Triple Chesee - Sliced']
+          - name: kategori_barang
+            description: "kolom kategori barang"
+            tests:
+                - not_null
+          - name: tipe_pesanan
+            description: "kolom tipe pesanan"
+            tests:
+                - not_null
+          - name: tanggal_transaksi
+            description: "kolom tanggal transaksi terbuat"
+            tests:
+                - not_null
+          - name: nama_kasir
+            description: "kolom nama kasir"
+            tests:
+                - not_null
+          - name: keterangan
+            description: "kolom  keterangan"
+            tests:
+                - not_null                         
+                              
+                               
 
     - name: fact_transaksi_all
       description: merupakan data fact transaksi bulan mei juni juli
@@ -55,5 +92,15 @@ models:
     #         tests:
     #             - unique
     #             - not_null
+
+    - name: mart_transaksi
+      description: merupakan data mart transaksi bulan mei juni juli
+    #   columns:
+    #       - name: id
+    #         description: "The primary key for this table"
+    #         tests:
+    #             - unique
+    #             - not_null
+
 
    
