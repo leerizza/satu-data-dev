@@ -40,12 +40,38 @@ models:
 
     - name: dim_transaksi
       description: merupakan data master transaksi bulan mei juni juli
-    #   columns:
-    #       - name: id
-    #         description: "The primary key for this table"
-    #         tests:
-    #             - unique
-    #             - not_null
+      columns:
+          - name: transaksi_id
+            description: "primary key untuk table dim_transaksi"
+            tests:
+                - unique
+                - not_null
+          - name: nama_barang
+            description: "kolom nama barang/produk"
+            tests:
+                - not_null
+          - name: kategori_barang
+            description: "kolom kategori barang"
+            tests:
+                - not_null
+          - name: tipe_pesanan
+            description: "kolom tipe pesanan"
+            tests:
+                - not_null
+          - name: tanggal_transaksi
+            description: "kolom tanggal transaksi terbuat"
+            tests:
+                - not_null
+          - name: nama_kasir
+            description: "kolom nama kasir"
+            tests:
+                - not_null
+          - name: keterangan
+            description: "kolom  keterangan"
+            tests:
+                - not_null                         
+                              
+                               
 
     - name: fact_transaksi_all
       description: merupakan data fact transaksi bulan mei juni juli

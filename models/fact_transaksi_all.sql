@@ -66,7 +66,9 @@ FROM
 LEFT JOIN b ON t.id_barang = b.id_barang
 LEFT JOIN k ON t.id_kasir = k.id_kasir
 LEFT JOIN s ON t.id_status = s.id_status
-LEFT JOIN p ON t.id_tipe_pesanan = p.id_tipe_pesanan  
+LEFT JOIN p ON t.id_tipe_pesanan = p.id_tipe_pesanan 
+WHERE 
+    b.kategori <> 'Extra Charge' 
 ORDER BY 1 DESC
 
 
