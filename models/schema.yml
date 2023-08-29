@@ -2,73 +2,6 @@
 version: 2
 
 models:
-    - name: employees
-      description: merupakan data master employees
-      columns:
-          - name: employee_id
-            description: "Primary Key untuk table employees"
-            tests:
-                - unique
-                - not_null
-          - name: first_name
-            description: "Nama Depan employees"
-            tests:
-                - unique
-                - not_null
-          - name: last_name
-            description: "Nama Belakang employees"
-            tests:
-                - unique
-                - not_null
-          - name: email
-            description: "Email employees"
-            tests:
-                - unique
-                - not_null
-          - name: phone_number
-            description: "Nomor telepon employees"
-            tests:
-                - unique
-                - not_null
-          - name: hire_date
-            description: "Tanggal perekrutan employees"
-            tests:
-                - unique
-                - not_null
-          - name: job_id
-            description: "Kunci tamu ID employees job"
-            tests:
-                - unique
-                - not_null
-          - name: manager_id
-            description: "Kunci tamu ID manager"
-            tests:
-                - unique
-                - not_null
-          - name: department_id
-            description: "Kunci tamu ID department"
-            tests:
-                - unique
-                - not_null                                                
-
-    - name: departments
-      description: merupakan data master departments
-    #   columns:
-    #       - name: id
-    #         description: "The primary key for this table"
-    #         tests:
-    #             - unique
-    #             - not_null
-
-    - name: fact_transactions
-      description: merupakan data mart transaksi
-    #   columns:
-    #       - name: id
-    #         description: "The primary key for this table"
-    #         tests:
-    #             - unique
-    #             - not_null
-
     - name: dim_barang
       description: merupakan data master barang
     #   columns:
@@ -105,8 +38,17 @@ models:
     #             - unique
     #             - not_null
 
+    - name: dim_transaksi
+      description: merupakan data master transaksi bulan mei juni juli
+    #   columns:
+    #       - name: id
+    #         description: "The primary key for this table"
+    #         tests:
+    #             - unique
+    #             - not_null
+
     - name: fact_transaksi_all
-      description: merupakan data transaksi bulan mei juni juli
+      description: merupakan data fact transaksi bulan mei juni juli
     #   columns:
     #       - name: id
     #         description: "The primary key for this table"
