@@ -1,3 +1,8 @@
+{{
+    config(materialized='table', alias='mart_data_quality', description='merupakan data mart data quality transaksi')
+}}
+
+
 WITH x AS (
   SELECT
     DISTINCT
