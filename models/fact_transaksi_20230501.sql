@@ -1,11 +1,11 @@
 {{
-    config(materialized='table', description='merupakan data transaksi bulan mei')
+    config(materialized='table', alias='fact_transaksi_20230501', description='merupakan data transaksi bulan mei')
 }}
 
 WITH x AS (
 SELECT 
     * 
-FROM `data-engineering-riza.satu_data_master.fact_transaksi_20230501`)
+FROM data-engineering-riza.satu_data_master.fact_transaksi_20230501)
 
 SELECT
     *, CURRENT_DATE('Asia/Jakarta') AS created_at
