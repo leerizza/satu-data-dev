@@ -102,5 +102,14 @@ models:
     #             - unique
     #             - not_null
 
+    - name: mart_data_quality
+      description: merupakan data mart data quality transaksi
+    #   columns:
+    #       - name: id
+    #         description: "The primary key for this table"
+    #         tests:
+    #             - unique
+    #             - not_null
+
 
    
