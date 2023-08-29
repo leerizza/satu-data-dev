@@ -68,3 +68,21 @@ models:
     #         tests:
     #             - unique
     #             - not_null
+
+    - name: dim_barang
+      description: merupakan data master barang
+    #   columns:
+    #       - name: id
+    #         description: "The primary key for this table"
+    #         tests:
+    #             - unique
+    #             - not_null
+
+    - name: fact_transaksi_20230501
+      description: merupakan data transaksi bulan mei
+    #   columns:
+    #       - name: id
+    #         description: "The primary key for this table"
+    #         tests:
+    #             - unique
+    #             - not_null

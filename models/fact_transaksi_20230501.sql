@@ -1,5 +1,5 @@
 {{
-    config(materialized='table', description='merupakan data transaksi bulan mei')
+    config(materialized='table', alias='fact_transaksi_20230501', description='merupakan data transaksi bulan mei')
 }}
 
 WITH x AS (
