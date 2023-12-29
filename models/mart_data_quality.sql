@@ -43,8 +43,8 @@ a AS (
   FROM 
     --satu-data-staging-dev.dbt_project.dim_transaksi
     {{ ref('dim_transaksi') }}
-)
-
+),
+agg AS (
 SELECT
   'completeness' AS criteria,
   'transaksi_id null' AS metrics,
@@ -263,3 +263,25 @@ SELECT
     AS bad_data,
   'keterangan' AS validasi_kolom
 FROM x
+)
+
+SELECT
+  criteria,
+  metrics,
+  IFNULL(total_data, 0) AS total_data,
+  IFNULL(total_data, 0) - IFNULL(bad_data, 0) AS good_data,
+  IFNULL(bad_data, 0) AS bad_data,
+  SAFE_CAST(
+    (IFNULL(total_data, 0) - IFNULL(bad_data, 0)) * 100
+      /
+    (CASE WHEN IFNULL(total_data, 0) = 0 THEN 1 ELSE IFNULL(total_data, 0) END) AS NUMERIC
+  ) AS percentage_good_data,
+  100 - SAFE_CAST(
+    (IFNULL(total_data, 0) - IFNULL(bad_data, 0)) * 100
+      /
+    (CASE WHEN IFNULL(total_data, 0) = 0 THEN 1 ELSE IFNULL(total_data, 0) END) AS NUMERIC
+  ) AS percentage_bad_data,
+  validasi_kolom,
+  DATETIME(CURRENT_TIMESTAMP(), 'Asia/Jakarta') AS time_execution
+FROM
+  agg
